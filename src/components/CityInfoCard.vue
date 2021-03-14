@@ -9,12 +9,13 @@ export default {
   name: "CityInfoCard",
   props: ['search'],
   methods: {
-    showCityInfo() {
-      console.log("CityInfoCard.vue@showCityInfo: " + this.search)
+    showCityInfo(city) {
+      console.log("CityInfoCard.vue@showCityInfo: " + city)
+      this.city = city;
     }
   },
   created() {
-    console.log("CityInfoCard.vue@created: " + this.search)
+    this.$bus.on('searchCity', this.showCityInfo)
   }
 }
 </script>

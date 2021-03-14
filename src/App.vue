@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Weather App</h1>
-    <CitySearchField @searchCity="onSearchCity" />
+    <CitySearchField />
     <CityInfoCard :search="search" />
   </div>
 </template>
