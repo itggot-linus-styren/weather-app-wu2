@@ -7,7 +7,10 @@
 <script>
 export default {
   name: "CityInfoCard",
-  props: ['search']
+  props: ['search'],
+  created() {
+    console.log("CityInfoCard.vue: " + this.search)
+  }
 }
 </script>
 
