@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     onSearchClick() {
-      console.log(this.search);
+      this.$emit('searchCity', this.search);
     }
   }
 }

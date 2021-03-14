@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Weather App</h1>
-    <CitySearchField />
+    <CitySearchField @searchCity="onSearchCity" />
     <CityInfoCard />
   </div>
 </template>
@@ -12,6 +12,11 @@ import CitySearchField from './components/CitySearchField.vue';
 
 export default {
   name: 'App',
+  methods: {
+    onSearchCity(search) {
+      console.log("Du sökte på " + search);
+    }
+  },
   components: { CityInfoCard, CitySearchField }
 }
 </script>
