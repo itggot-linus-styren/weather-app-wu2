@@ -27,6 +27,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: calc(100vh - 5em);
+  font-size: 24px;
 }
 </style>
