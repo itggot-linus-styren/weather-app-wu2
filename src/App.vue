@@ -2,7 +2,7 @@
   <div>
     <h1>Weather App</h1>
     <CitySearchField @searchCity="onSearchCity" />
-    <CityInfoCard :search="search" />
+    <CityInfoCard ref="city" :search="search" />
   </div>
 </template>
 
@@ -21,6 +21,9 @@ export default {
     onSearchCity(search) {
       console.log("Du sökte på " + search);
       this.search = search;
+      setTimeout(() => {
+        this.$refs.city.showCityInfo();
+      }, 1);
     }
   },
   components: { CityInfoCard, CitySearchField }
