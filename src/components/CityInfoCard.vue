@@ -1,10 +1,12 @@
 <template>
   <div class="card">
     <div class="summary">
-      <h1>{{ city }}</h1>
+      <h2>0°</h2>
+      <h4>{{ city }}</h4>
     </div>
     <div class="weather">
-      <h1>{{ city }}</h1>
+      <h2>Rain</h2>
+      <h4>Light rain</h4>
     </div>
     <div class="details">
       <button @click="$emit('goBack')">Back</button>
@@ -47,18 +49,23 @@ export default {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px 1px;
   }
 
+  h2, h4 {
+    margin: 0 auto;
+  }
+
+  h4 {
+    font-weight: 100;
+  }
+
   .summary {
-    background-color: red;
     grid-area: sm;
   }
 
   .weather {
-    background-color: green;
     grid-area: wt;
   }
 
   .details {
-    background-color: blue;
     grid-area: dt;
   }
 </style>
