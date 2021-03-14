@@ -1,5 +1,6 @@
 <template>
   <div>
+    <button @click="$emit('goBack')">Back</button>
     <h1>{{ city }}</h1>
   </div>
 </template>

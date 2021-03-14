@@ -2,7 +2,7 @@
   <div>
     <h1>Weather App</h1>
     <CitySearchField v-show="!showCityInfo" />
-    <CityInfoCard v-show="showCityInfo" />
+    <CityInfoCard @goBack="hideCityInfo" v-show="showCityInfo" />
   </div>
 </template>
 
@@ -15,6 +15,11 @@ export default {
   data() {
     return {
       showCityInfo: false
+    }
+  },
+  methods: {
+    hideCityInfo() {
+      this.showCityInfo = false;
     }
   },
   created() {
