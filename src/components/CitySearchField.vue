@@ -5,14 +5,19 @@
       att detta inputfält är ett sökfält. Se också:
       https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/search
     -->      
-    <input data-cy="city" class="input" type="search" placeholder="Köttkulla..">
+    <input data-cy="city" class="input" type="search" placeholder="Köttkulla.." v-model="search">
     <button data-cy="search">🔍</button>
   </div>
 </template>
 
 <script>
 export default {
-
+  name: "CitySearchField",
+  data() {
+    return {
+      search: ""
+    }
+  }
 }
 </script>
 
