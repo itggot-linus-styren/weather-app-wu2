@@ -1,8 +1,8 @@
 <template>
   <div>
     <h1>Weather App</h1>
-    <CitySearchField />
-    <CityInfoCard />
+    <CitySearchField v-show="!showCityInfo" />
+    <CityInfoCard v-show="showCityInfo" />
   </div>
 </template>
 
@@ -14,8 +14,13 @@ export default {
   name: 'App',
   data() {
     return {
-      search: ""
+      showCityInfo: false
     }
+  },
+  created() {
+    this.$bus.on('searchCity', () => {
+      this.showCityInfo = true;
+    })
   },
   components: { CityInfoCard, CitySearchField }
 }
