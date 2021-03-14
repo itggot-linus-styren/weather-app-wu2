@@ -22,6 +22,7 @@ npm run lint
 
 ### Dependencies
 - [mitt](https://github.com/developit/mitt)
+- [OpenWeather](https://openweathermap.org/current)
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
