@@ -1,13 +1,17 @@
 <template>
   <div>
-    <h1>{{ search }}</h1>
+    <h1>{{ city }}</h1>
   </div>
 </template>
 
 <script>
 export default {
   name: "CityInfoCard",
-  props: ['search'],
+  data() {
+    return {
+      city: ""
+    }
+  },
   methods: {
     showCityInfo(city) {
       console.log("CityInfoCard.vue@showCityInfo: " + city)

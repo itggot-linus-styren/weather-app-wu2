@@ -2,7 +2,7 @@
   <div>
     <h1>Weather App</h1>
     <CitySearchField />
-    <CityInfoCard :search="search" />
+    <CityInfoCard />
   </div>
 </template>
 
