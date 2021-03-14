@@ -5,7 +5,14 @@
       att detta inputfält är ett sökfält. Se också:
       https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/search
     -->      
-    <input data-cy="city" class="input" type="search" placeholder="Köttkulla.." v-model="search">
+    <input
+      data-cy="city"
+      class="input"
+      type="search"
+      placeholder="Köttkulla.."
+      @keyup.enter="onSearchClick"
+      v-model="search"
+    />
     <button data-cy="search" @click="onSearchClick">🔍</button>
   </div>
 </template>
