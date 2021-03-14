@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="card">
     <button @click="$emit('goBack')">Back</button>
     <h1>{{ city }}</h1>
   </div>
@@ -26,5 +26,10 @@ export default {
 </script>
 
 <style>
-
+  .card {
+    background-color: rgba(232, 230, 227, 0.87);
+    border-radius: 2em;
+    padding: 2em;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px 1px;
+  }
 </style>
