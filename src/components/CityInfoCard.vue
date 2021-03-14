@@ -1,7 +1,14 @@
 <template>
   <div class="card">
-    <button @click="$emit('goBack')">Back</button>
-    <h1>{{ city }}</h1>
+    <div class="summary">
+      <h1>{{ city }}</h1>
+    </div>
+    <div class="weather">
+      <h1>{{ city }}</h1>
+    </div>
+    <div class="details">
+      <button @click="$emit('goBack')">Back</button>
+    </div>
   </div>
 </template>
 
@@ -27,6 +34,8 @@ export default {
 
 <style>
   .card {
+    display: grid;
+    min-width: 400px;
     background-color: rgba(232, 230, 227, 0.87);
     border-radius: 2em;
     padding: 2em;
