@@ -6,7 +6,7 @@
       https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/search
     -->      
     <input data-cy="city" class="input" type="search" placeholder="Köttkulla.." v-model="search">
-    <button data-cy="search">🔍</button>
+    <button data-cy="search" @click="onSearchClick">🔍</button>
   </div>
 </template>
 
@@ -16,6 +16,11 @@ export default {
   data() {
     return {
       search: ""
+    }
+  },
+  methods: {
+    onSearchClick() {
+      console.log(this.search);
     }
   }
 }
