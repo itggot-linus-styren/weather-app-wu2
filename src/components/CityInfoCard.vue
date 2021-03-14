@@ -9,6 +9,28 @@
       <h4>Light rain</h4>
     </div>
     <div class="details">
+      <div class="items">
+        <div>
+          <h4>Feels like</h4>
+          <p>0°</p>
+        </div>
+        <div>
+          <h4>Humidity</h4>
+          <p>50%</p>
+        </div>
+        <div>
+          <h4>Pressure</h4>
+          <p>1000mb</p>
+        </div>
+        <div>
+          <h4>Min temp</h4>
+          <p>0°</p>
+        </div>
+        <div>
+          <h4>Max temp</h4>
+          <p>10°</p>
+        </div>
+      </div>
       <button @click="$emit('goBack')">Back</button>
     </div>
   </div>
@@ -55,6 +77,18 @@ export default {
 
   h4 {
     font-weight: 100;
+    font-size: 1em;
+  }
+
+  .items {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .items > div {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0.5em;
   }
 
   .summary {
