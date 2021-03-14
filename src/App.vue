@@ -1,16 +1,19 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1>Weather App</h1>
+    <!--
+      type="search" och type="text" gör ingen skillnad men det är tydligare
+      att detta inputfält är ett sökfält. Se också:
+      https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/search
+    -->
+    <input data-cy="city" type="search" placeholder="Köttkulla..">
+    <button data-cy="search">🔍</button>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name: 'App'
 }
 </script>
 
