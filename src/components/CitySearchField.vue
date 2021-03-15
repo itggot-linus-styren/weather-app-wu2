@@ -29,7 +29,30 @@ export default {
   },
   methods: {
     onSearchClick() {
-      console.log(fetch(`http://api.openweathermap.org/data/2.5/weather?q=Köttkulla&appid=${config.apiKey}`));
+      const url = `http://api.openweathermap.org/data/2.5/weather?q=Köttkulla&appid=${config.apiKey}`;
+      /*
+       * Eftersom det tar tid att hämta data från externa resurser så måste vi 
+       * köra fetch asynkront, dvs i bakgrunden utan att blockera webbläsaren.
+       * 
+       * Ifall vi hade kört detta synkront hade det inte gått att göra något
+       * innan vi får tillbaka ett svar. Prova att köra denna koden för att se
+       * skillnaden:
+       
+      let request = new XMLHttpRequest();
+      request.open('GET', url, false); // `false` makes the request synchronous
+      request.send(null);
+
+       * Fetch returnerar ett Promise som vi ger en callback funktion som
+       * körs när vi får tillbaka ett svar.
+       */
+      fetch(url).then((response) => {
+        console.log(response);
+      })
+
+      /*
+       * Den här koden kommer att köra direkt efter vi påbörjat förfrågan till
+       * OpenWeatherAPI innan vi fått tillbaka något svar.
+       */
       this.$bus.emit('searchCity', this.search);
     }
   }
