@@ -49,13 +49,8 @@ export default {
         return response.json()
       }).then((cityInfo) => {
         console.log(cityInfo);
-      })
-
-      /*
-       * Den här koden kommer att köra direkt efter vi påbörjat förfrågan till
-       * OpenWeatherAPI innan vi fått tillbaka något svar.
-       */
-      this.$bus.emit('searchCity', this.search);
+        this.$bus.emit('searchCity', `${cityInfo.name}, ${cityInfo.sys.country}`);
+      })      
     }
   }
 }
