@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import config from '@/appConfig.js';
+
 export default {
   name: "CitySearchField",
   data() {
@@ -27,6 +29,7 @@ export default {
   },
   methods: {
     onSearchClick() {
+      console.log(fetch(`http://api.openweathermap.org/data/2.5/weather?q=Köttkulla&appid=${config.apiKey}`));
       this.$bus.emit('searchCity', this.search);
     }
   }
