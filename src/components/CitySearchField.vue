@@ -46,7 +46,13 @@ export default {
        * körs när vi får tillbaka ett svar.
        */
       fetch(url).then((response) => {
-        return response.json()
+        if (!response.ok) {
+          // Ifall vi inte fick en 2xx response, avbryt kedjan här (reject)
+          throw new Error("No matching location.");
+        } else {
+          // Annars konverterar vi svaret till ett JS objekt
+          return response.json();
+        }        
       }).then((cityInfo) => {
         console.log(cityInfo);
         this.$bus.emit('searchCity', `${cityInfo.name}, ${cityInfo.sys.country}`);
