@@ -46,9 +46,9 @@ export default {
        * körs när vi får tillbaka ett svar.
        */
       fetch(url).then((response) => {
-        return response.json().then((cityInfo) => {
-          console.log(cityInfo);
-        })
+        return response.json()
+      }).then((cityInfo) => {
+        console.log(cityInfo);
       })
 
       /*
