@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     onSearchClick() {
-      const url = `http://api.openweathermap.org/data/2.5/weather?q=Köttkulla&appid=${config.apiKey}`;
+      const url = `http://api.openweathermap.org/data/2.5/weather?q=Köttbulle&appid=${config.apiKey}`;
       /*
        * Eftersom det tar tid att hämta data från externa resurser så måste vi 
        * köra fetch asynkront, dvs i bakgrunden utan att blockera webbläsaren.
@@ -50,7 +50,9 @@ export default {
       }).then((cityInfo) => {
         console.log(cityInfo);
         this.$bus.emit('searchCity', `${cityInfo.name}, ${cityInfo.sys.country}`);
-      })      
+      }).catch((reason) => {
+        alert(reason);
+      })
     }
   }
 }
